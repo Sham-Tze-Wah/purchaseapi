@@ -1,0 +1,76 @@
+package com.cinematicketsys.purchaseapi.model;
+
+import java.util.UUID;
+
+import com.cinematicketsys.purchaseapi.common.TicketStatus;
+import com.cinematicketsys.purchaseapi.common.TicketType;
+import org.joda.time.DateTime;
+
+public class Ticket{
+    final UUID id;
+    TicketType ticketType; //TicketType
+    Double price;
+    int seatNo;
+    DateTime movieTime;
+    TicketStatus ticketStatus; //TicketStatus
+    Movie movie;
+
+    public Ticket(UUID id, TicketType ticketType, Double price, int seatNo, DateTime movieTime, TicketStatus ticketStatus) {
+        this.id = id;
+        this.ticketType = ticketType;
+        this.price = price;
+        this.seatNo = seatNo;
+        this.movieTime = movieTime;
+        this.ticketStatus = ticketStatus;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public TicketType getTicketType() {
+        return ticketType;
+    }
+
+    public void setTicketType(TicketType ticketType) {
+        this.ticketType = ticketType;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public int getSeatNo() {
+        return seatNo;
+    }
+
+    public void setSeatNo(int seatNo) {
+        this.seatNo = seatNo;
+    }
+
+    public DateTime getMovieTime() {
+        return movieTime;
+    }
+
+    public void setMovieTime(DateTime movieTime) {
+        this.movieTime = movieTime;
+    }
+
+    public TicketStatus getTicketStatus() {
+        return ticketStatus;
+    }
+
+    public void setTicketStatus(TicketStatus ticketStatus) {
+        this.ticketStatus = ticketStatus;
+    }
+
+    public void addPrice(){
+        System.out.println("The price is increased.");
+    }
+
+
+}
