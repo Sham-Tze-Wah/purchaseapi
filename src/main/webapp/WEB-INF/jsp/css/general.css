@@ -1,0 +1,26 @@
+:root{
+    --bgMenuColor: black;
+}
+
+.header-menu{
+    background-color: var(--bgMenuColor);
+    color: white;
+
+}
+.header-menu-elem{
+    border-right: 1px solid white;
+}
+
+.hover-elem::hover{
+    color:var(--bgMenuColor); !important
+    opacity:0.5;
+}
+
+.text {
+	text-transform: uppercase;
+	background: linear-gradient(to right, #ff00d4 0%, #00ddff 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-weight: bolder;
+    font-family: 'Poppins', sans-serif;
+};
