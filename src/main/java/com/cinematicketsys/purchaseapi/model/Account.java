@@ -1,10 +1,16 @@
 package com.cinematicketsys.purchaseapi.model;
 
 import com.cinematicketsys.purchaseapi.common.AccountStatus;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import java.util.UUID;
 
+@Entity
+@Table
 public class Account {
+    @Id
     final UUID id;
     String name;
     final String email;

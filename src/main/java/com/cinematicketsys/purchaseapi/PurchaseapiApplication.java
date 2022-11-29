@@ -7,7 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PurchaseapiApplication {
 
 	public static void main(String[] args) {
-
+//		ContextApplication ca = new ContextApplication();
+		SpringApplication.run(PurchaseapiApplication.class, args);
 	}
 
 }

@@ -1,3 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +25,7 @@
         <div class="row header-menu d-flex justify-content-center" style="background-color: #343a40;" >
 
             <div class="column col-sm-2 d-flex flex-column justify-content-center" style="max-width:120px;cursor:pointer;" >
-                <a class="" href="/purchaseapi/Home.jsp" style="text-decoration:none;">
+                <a class="" href="/purchaseapi/index.jsp" style="text-decoration:none;">
                 <div class="flex-column justify-content-center">
                     <div class="col-sm-6 d-flex justify-content-center" style="width:100%;" >
                         <img class="img-fluid d-flex justify-content-center" style="min-width:60px;max-width:60px;"  src="https://us.123rf.com/450wm/pxlprostudio/pxlprostudio1907/pxlprostudio190701502/pxlprostudio190701502.jpg?ver=6" alt="logo">
@@ -37,16 +42,16 @@
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
                   <ul class="navbar-nav ">
                     <li class="nav-item active nav-width">
-                        <a class="nav-link px-5" href="/purchaseapi/Home.jsp">Movie Shows</a>
+                        <a class="nav-link px-5" href="/purchaseapi/index.jsp">Movie Shows</a>
                     </li>
                     <li class="nav-item nav-width">
-                      <a class="nav-link px-5" href="/purchaseapi/Promotion.jsp">Promotions</a>
+                      <a class="nav-link px-5" href="/purchaseapi/promotion.jsp">Promotions</a>
                     </li>
                     <li class="nav-item nav-width">
-                      <a class="nav-link px-5" href="/purchaseapi/FoodNBeverage.jsp">Food & Beverages</a>
+                      <a class="nav-link px-5" href="/purchaseapi/foodNBeverage.jsp">Food & Beverages</a>
                     </li>
                     <li class="nav-item nav-width">
-                        <a class="nav-link px-5" href="/purchaseapi/AboutUs.jsp" >About Us</a>
+                        <a class="nav-link px-5" href="/purchaseapi/aboutUs.jsp" >About Us</a>
                         <!--px-5 hover-elem-->
                     </li>
                   </ul>
@@ -54,17 +59,49 @@
         </div>
 
         <!--Row 3-->
-        <div class="row">
-            <table class="table">
-                <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>ReleaseDate</th>
-                    <th>Description</th>
-                </tr>
+        <div class="row w-75 m-auto table-responsive mt-5 text-nowrap">
+            <table id="cinemaTable" class="table table-striped table-sm" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th class="pl-5 th-sm">
+                            <div>
+                                <input class="" type="checkbox" id="check1" name="" value="checkAll">
+                            </div>
+                        </th>
+                        <th class="th-sm" scope="col">ID</th>
+                        <th class="th-sm" scope="col">Title</th>
+                        <th class="th-sm" scope="col">ReleaseDate</th>
+                        <th class="th-sm" scope="col">Description</th>
+                        <th class="th-sm"></th>
+                    </tr>
+                 </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><button class="btn btn-primary">View</button></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>${ID}</td>
+                        <td>${Title}</td>
+                        <td>${ReleaseDate}</td>
+                        <td>${Description}</td>
+                        <td><button class="btn btn-primary">View</button></td>
+                    </tr>
+
+                </tbody>
             </table>
         </div>
-
     </div>
+<script>
+    $(document).ready(function () {
+      $('#cinemaTable').DataTable();
+      $('.dataTables_length').addClass('bs-select');
+    });
+</script>
 </body>
 
