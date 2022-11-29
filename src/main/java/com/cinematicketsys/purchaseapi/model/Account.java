@@ -1,6 +1,8 @@
 package com.cinematicketsys.purchaseapi.model;
 
 import com.cinematicketsys.purchaseapi.common.AccountStatus;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -12,9 +14,16 @@ import java.util.UUID;
 public class Account {
     @Id
     final UUID id;
+
+    @Column(name="name")
     String name;
+    @Column(name="email")
     final String email;
+
+    @Column(name="password")
     String password;
+
+    @Column(name="accountStatus")
     AccountStatus status;
 
     public Account(UUID id, String name, String email, String password) {

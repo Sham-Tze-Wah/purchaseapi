@@ -6,12 +6,25 @@ import com.cinematicketsys.purchaseapi.common.TicketStatus;
 import com.cinematicketsys.purchaseapi.common.TicketType;
 import org.joda.time.DateTime;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+
 public class Ticket{
+    @Id
     final UUID id;
+
+    @Column(name="ticketType")
     TicketType ticketType; //TicketType
+
+    @Column(name="price")
     Double price;
+    @Column(name="")
     int seatNo;
+
+    @Column(name="movieTime")
     DateTime movieTime;
+
+    @Column(name="ticketStatus")
     TicketStatus ticketStatus; //TicketStatus
     Movie movie;
 

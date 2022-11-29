@@ -1,7 +1,13 @@
 package com.cinematicketsys.purchaseapi.model;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+
 public class Venue {
+    @Id
     final int venueNo;
+
+    @Column(name="numOfSeat")
     int numOfSeat;
 
     public Venue(int venueNo, int numOfSeat) {

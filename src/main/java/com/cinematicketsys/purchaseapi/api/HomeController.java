@@ -3,7 +3,9 @@ package com.cinematicketsys.purchaseapi.api;
 import com.cinematicketsys.purchaseapi.services.HomeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.text.DateFormat;
@@ -11,7 +13,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.UUID;
 
-@RequestMapping("/index")
+@RequestMapping("/")
 @Controller
 public class HomeController {
 
@@ -21,7 +23,7 @@ public class HomeController {
 //        this.homeService = homeService;
 //    }
 
-    @RequestMapping("/index")
+    @GetMapping("/index")
     ModelAndView index(Locale locale){
         UUID id = UUID.randomUUID();
         Date date = new Date();

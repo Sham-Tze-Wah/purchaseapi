@@ -3,17 +3,32 @@ package com.cinematicketsys.purchaseapi.model;
 import com.cinematicketsys.purchaseapi.common.Genre;
 import com.cinematicketsys.purchaseapi.common.MovieStatus;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
 import java.sql.Time;
 import java.util.Date;
 import java.util.UUID;
 
 public class Movie {
+    @Id
     final UUID id;
+
+    @Column(name="title")
     String title;
+
+    @Column(name="releaseDate")
     Date releaseDate;
+
+    @Column(name="description")
     String description;
+
+    @Column(name="genre")
     final Genre genre;
+
+    @Column(name="movieStatus")
     MovieStatus movieStatus;
+
+    @Column(name="venue")
     Venue venue;
 
     //soon the movie will be released
