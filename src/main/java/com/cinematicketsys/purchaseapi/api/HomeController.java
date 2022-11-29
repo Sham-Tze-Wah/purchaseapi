@@ -1,33 +1,42 @@
 package com.cinematicketsys.purchaseapi.api;
 
+import com.cinematicketsys.purchaseapi.services.HomeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 import java.util.UUID;
 
-@RequestMapping("/")
+@RequestMapping("/index")
 @Controller
 public class HomeController {
 
+//    private final HomeService homeService;
+//
+//    public HomeController(HomeService homeService) {
+//        this.homeService = homeService;
+//    }
+
     @RequestMapping("/index")
-    String index(Locale locale, Model model){
+    ModelAndView index(Locale locale){
         UUID id = UUID.randomUUID();
         Date date = new Date();
         DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 
         String formattedDate = dateFormat.format(date);
 
-        System.out.println("Home Page Requested.");
-        model.addAttribute("ID",id);
-        model.addAttribute("Title", "Black Adam");
-        model.addAttribute("ReleaseDate", formattedDate);
-        model.addAttribute("Description", "A superhero story.");
+        ModelAndView model = new ModelAndView();
+        model.setViewName("index.jsp");
+        //System.out.println("Home Page Requested.");
+        model.addObject("ID",id);
+        model.addObject("Title", "Black Adam");
+        model.addObject("ReleaseDate", formattedDate);
+        model.addObject("Description", "A superhero story.");
 
-        return "index";
+        return model;
     }
 }
