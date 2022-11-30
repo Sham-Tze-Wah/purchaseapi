@@ -98,10 +98,10 @@ pageEncoding="UTF-8" isELIgnored="false" %>
         </div>
     </div>
 <script>
-    $(document).ready(function () {
-      $('#cinemaTable').DataTable();
-      $('.dataTables_length').addClass('bs-select');
-    });
+    //$(document).ready(function () {
+      //$('#cinemaTable').DataTable();
+      //$('.dataTables_length').addClass('bs-select');
+    //});
 </script>
 </body>
 

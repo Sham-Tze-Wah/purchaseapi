@@ -40,6 +40,7 @@ public class Movie {
         this.movieStatus = movieStatus;
     }
 
+    //the movie has been released
     public Movie(UUID id, String title, Date releaseDate, Genre genre, Venue venue) {
         this.id = id;
         this.title = title;

@@ -17,7 +17,7 @@ public interface MovieDao {
 
     List<Movie> selectAllMovie();
 
-    Optional<Ticket> selectMovieById(UUID id);
+    Optional<Movie> selectMovieById(UUID id);
 
     int deleteMovieById(UUID id);
 

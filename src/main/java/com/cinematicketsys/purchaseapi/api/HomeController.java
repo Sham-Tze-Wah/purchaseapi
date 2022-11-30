@@ -1,44 +1,48 @@
 package com.cinematicketsys.purchaseapi.api;
 
+import com.cinematicketsys.purchaseapi.model.Movie;
 import com.cinematicketsys.purchaseapi.services.HomeService;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.text.DateFormat;
-import java.util.Date;
-import java.util.Locale;
-import java.util.UUID;
+import java.util.*;
 
-@RequestMapping("/")
 @Controller
 public class HomeController {
 
-//    private final HomeService homeService;
+    private final HomeService homeService;
+
+    public HomeController(HomeService homeService) {
+        this.homeService = homeService;
+    }
+
+    @RequestMapping(value="/", method= RequestMethod.GET)
+    public ModelAndView index(ModelMap model){
+        //UUID id = UUID.randomUUID();
+//        Date date = new Date();
+//        DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 //
-//    public HomeController(HomeService homeService) {
-//        this.homeService = homeService;
-//    }
 
-    @GetMapping("/index")
-    ModelAndView index(Locale locale){
-        UUID id = UUID.randomUUID();
-        Date date = new Date();
-        DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+//        String formattedDate = dateFormat.format(date);
+//        //System.out.println("Home Page Requested.");
+        //model.addAttribute("ID",id);
+        return new ModelAndView("index.jsp", model);
+//        model.addAttribute("Title", "Black Adam");
+//        model.addAttribute("ReleaseDate", formattedDate);
+//        model.addAttribute("Description", "A superhero story.");
 
-        String formattedDate = dateFormat.format(date);
+    }
 
-        ModelAndView model = new ModelAndView();
-        model.setViewName("index.jsp");
-        //System.out.println("Home Page Requested.");
-        model.addObject("ID",id);
-        model.addObject("Title", "Black Adam");
-        model.addObject("ReleaseDate", formattedDate);
-        model.addObject("Description", "A superhero story.");
-
-        return model;
+    @GetMapping
+    public List<Movie> displayAllMovieDetails(){
+        return homeService.displayAllMovieDetails();
     }
 }
