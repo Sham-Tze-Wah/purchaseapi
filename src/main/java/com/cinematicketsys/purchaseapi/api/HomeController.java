@@ -24,8 +24,9 @@ public class HomeController {
         this.homeService = homeService;
     }
 
-    @RequestMapping(value="/", method= RequestMethod.GET)
-    public ModelAndView index(ModelMap model){
+
+    @GetMapping//value="api/index", method= RequestMethod.GET)
+    public String index(){
         //UUID id = UUID.randomUUID();
 //        Date date = new Date();
 //        DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
@@ -34,7 +35,8 @@ public class HomeController {
 //        String formattedDate = dateFormat.format(date);
 //        //System.out.println("Home Page Requested.");
         //model.addAttribute("ID",id);
-        return new ModelAndView("index.jsp", model);
+        System.out.println("Hey bro");
+        return "index";
 //        model.addAttribute("Title", "Black Adam");
 //        model.addAttribute("ReleaseDate", formattedDate);
 //        model.addAttribute("Description", "A superhero story.");

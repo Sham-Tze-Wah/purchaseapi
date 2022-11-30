@@ -10,10 +10,11 @@ import org.springframework.context.annotation.Configuration;
 
 
 @SpringBootApplication
-
+@ComponentScan(basePackages = {"com.cinematicketsys.purchaseapi"})
 public class PurchaseapiApplication {
 
 	private static ApplicationContext applicationContext;
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(PurchaseapiApplication.class, args);
