@@ -60,6 +60,9 @@ pageEncoding="UTF-8" isELIgnored="false" %>
 
         <!--Row 3-->
         <div class="row w-75 m-auto table-responsive mt-5 text-nowrap">
+        Server Version: <%= application.getServerInfo() %><br>
+        Servlet Version: <%= application.getMajorVersion() %>.<%= application.getMinorVersion() %>
+        JSP Version: <%= JspFactory.getDefaultFactory().getEngineInfo().getSpecificationVersion() %> <br>
             <table id="cinemaTable" class="table table-striped table-sm" cellspacing="0">
                 <thead>
                     <tr>
