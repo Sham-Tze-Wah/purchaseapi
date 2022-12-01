@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.text.DateFormat;
 import java.util.*;
 
-@Controller
+@RestController
 public class HomeController {
 
     private final HomeService homeService;
@@ -25,7 +25,7 @@ public class HomeController {
     }
 
 
-    @GetMapping//value="api/index", method= RequestMethod.GET)
+    //@GetMapping//value="api/index", method= RequestMethod.GET)
     public String index(){
         //UUID id = UUID.randomUUID();
 //        Date date = new Date();
@@ -43,8 +43,14 @@ public class HomeController {
 
     }
 
-    @GetMapping
+    //@GetMapping
     public List<Movie> displayAllMovieDetails(){
         return homeService.displayAllMovieDetails();
+    }
+
+    @RequestMapping("/add")
+    public String display(){
+        System.out.println("This is working LOL");
+        return "aboutUs.jsp";
     }
 }
